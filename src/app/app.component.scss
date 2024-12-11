@@ -20,22 +20,6 @@
     bottom: 0;
   }
 
-  .hover-zone.top:hover + app-header {
-    transform: translateY(0);
-  }
-
-  .hover-zone.bottom:hover + app-footer {
-    transform: translateY(0);
-  }
-
-  app-header:hover {
-    transform: translateY(0);
-  }
-
-  app-footer:hover {
-    transform: translateY(0);
-  }
-
   app-header, app-footer {
     flex: 0 0 auto;
     position: fixed;
@@ -43,8 +27,6 @@
     left: 0;
     z-index: 1500;
     transition: transform 0.5s ease-in-out;
-
-    transform: translateY(-100%);
   }
 
   app-header {
@@ -53,7 +35,10 @@
 
   app-footer {
     bottom: 0;
-    transform: translateY(100%);
+  }
+
+  app-timeline{
+    width: 100%;
   }
 
   .container {

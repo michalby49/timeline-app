@@ -44,6 +44,14 @@
     }
   }
 
+  .event-title{
+    word-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
   .event-description {
     font-size: 0.85em;
     margin: 0.5em 0;

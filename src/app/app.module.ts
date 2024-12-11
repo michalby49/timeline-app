@@ -12,6 +12,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { ConfirmationService } from 'primeng/api';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 export function localStorageSyncReducer(reducer: any) {
   return localStorageSync({ keys: ['event'], rehydrate: true })(reducer);
@@ -35,7 +39,10 @@ export function localStorageSyncReducer(reducer: any) {
     StoreDevtoolsModule.instrument({
       maxAge: 25
     }),
-    StoreRouterConnectingModule.forRoot()
+    StoreRouterConnectingModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
