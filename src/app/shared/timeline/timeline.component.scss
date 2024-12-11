@@ -1,0 +1,81 @@
+.custom-card {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  background-color: #ffffff;
+  margin-bottom: 1em;
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-width: 200px;
+  flex-grow: 1;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.event-info-conteiner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .event-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+
+    .event-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-left: 10px;
+      color: #333;
+    }
+
+    .event-icon {
+      font-size: 1.5em;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: #ffffff;
+    }
+  }
+
+  .event-description {
+    font-size: 0.85em;
+    margin: 0.5em 0;
+    color: #666;
+  }
+
+  .event-date {
+    font-size: 1em;
+    color: #757575;
+    margin-top: 0.5em;
+  }
+}
+
+.event-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+
+  button {
+    font-size: 0.85em;
+  }
+}
+
+.ui-timeline-event-content {
+  max-width: 350px;
+}
+
+.ui-timeline-left .ui-timeline-event-content {
+  float: left;
+}
+
+.ui-timeline-right .ui-timeline-event-content {
+  float: right;
+}

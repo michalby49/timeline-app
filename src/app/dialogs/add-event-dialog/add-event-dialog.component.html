@@ -1,0 +1,25 @@
+<p-dialog header="Add New Event" [(visible)]="displayDialog" [modal]="true" [closable]="false" [responsive]="true">
+  <form #form="ngForm" class="p-fluid">
+    <div class="p-fluid">
+      <div class="p-field">
+        <label for="title">Tytuł</label>
+        <input id="title" type="text" pInputText [(ngModel)]="newEvent.title" name="title" #title="ngModel" required>
+        <div *ngIf="title.invalid && title.touched" class="p-error">Tytuł nie może być pusty.</div>
+      </div>
+      <div class="p-field">
+        <label for="date">Data</label>
+        <input id="date" type="date" pInputText [(ngModel)]="newEvent.date" name="date" #date="ngModel" required>
+        <div *ngIf="date.invalid && date.touched" class="p-error">Data nie może być pusta.</div>
+      </div>
+      <div class="p-field">
+        <label for="description">Opis</label>
+        <textarea id="description" rows="3" pInputText [(ngModel)]="newEvent.description" name="description" #description="ngModel" required></textarea>
+        <div *ngIf="description.invalid && description.touched" class="p-error">Opis nie może być pusty.</div>
+      </div>
+    </div>
+    <p-footer>
+      <button pButton type="button" label="Anuluj" icon="pi pi-times" class="ui-button-secondary" (click)="closeDialog()"></button>
+      <button pButton type="button" label="Dodaj" icon="pi pi-check" [disabled]="form.invalid" (click)="addEvent()"></button>
+    </p-footer>
+  </form>
+</p-dialog>

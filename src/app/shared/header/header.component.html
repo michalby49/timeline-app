@@ -1,0 +1,9 @@
+<header class="header">
+  <h1>Timeline App</h1>
+
+  <nav>
+    <input type="text" pInputText placeholder="Wyszukaj wydarzenia..." [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange()" />
+    <button pButton type="button" label="Dodaj wydarzenie" icon="pi pi-plus" (click)="openAddEventDialog()"></button>
+  </nav>
+
+</header>

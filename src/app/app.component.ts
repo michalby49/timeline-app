@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, ViewChild } from '@angular/core';
+import { AddEventDialogComponent } from './dialogs/add-event-dialog/add-event-dialog.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'timeline-app';
+  @ViewChild(AddEventDialogComponent) addEventDialog!: AddEventDialogComponent;
+
+  openAddEventDialog(): void {
+    this.addEventDialog.openDialog();
+  }
 }
